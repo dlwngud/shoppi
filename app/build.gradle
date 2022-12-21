@@ -7,6 +7,10 @@ android {
     namespace 'com.dlwngud.app'
     compileSdk 32
 
+    viewBinding {
+        enabled = true
+    }
+
     defaultConfig {
         applicationId "com.dlwngud.app"
         minSdk 21
