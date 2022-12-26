@@ -1,10 +1,10 @@
 package com.dlwngud.app
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.dlwngud.app.databinding.FragmentHomeBinding
@@ -29,5 +29,9 @@ class HomeFragment: Fragment() {
         binding.btn.setOnClickListener {
             findNavController().navigate(R.id.action_home_to_product_detail)
         }
+
+        val assetLoader = AssetLoader()
+        val homeData = assetLoader.getJsonString(requireContext(), "home.json")
+        Log.d("homeData", homeData ?: "")
     }
 }
