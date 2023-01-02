@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.dlwngud.app.databinding.FragmentHomeBinding
+import com.google.android.material.tabs.TabLayoutMediator
 import com.google.gson.Gson
 import org.json.JSONObject
 
@@ -46,6 +47,19 @@ class HomeFragment: Fragment() {
             binding.vpHomeBanner.adapter = HomeBannerAdapter().apply {
                 submitList(homeData.topBanner)
             }
+
+            val pageWidth = resources.getDimension(R.dimen.viewpager_item_width)
+            val pageMargin = resources.getDimension(R.dimen.viewpager_item_margin)
+            val screenWidth = resources.displayMetrics.widthPixels
+            val offset = screenWidth - pageWidth - pageMargin
+
+            binding.vpHomeBanner.offscreenPageLimit = 3
+            binding.vpHomeBanner.setPageTransformer { page, position ->
+                page.translationX = position * -offset
+            }
+            TabLayoutMediator(binding.vpHomeBannerIndicator, binding.vpHomeBanner) { tab, position ->
+
+            }.attach()
         }
     }
 }
