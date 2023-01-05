@@ -17,6 +17,7 @@
             app:layout_scrollFlags="scroll|enterAlways">
 
             <TextView
+
                 android:id="@+id/toolbar_home_title"
                 style="@style/TextHeadline5.Black02.Bold"
                 android:layout_width="match_parent"

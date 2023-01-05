@@ -1,4 +1,4 @@
-package com.dlwngud.app
+package com.dlwngud.app.ui
 
 import android.content.Intent
 import android.os.Bundle

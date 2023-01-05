@@ -1,8 +1,7 @@
-package com.dlwngud.app
+package com.dlwngud.app.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.dlwngud.app.databinding.ActivityMainBinding
