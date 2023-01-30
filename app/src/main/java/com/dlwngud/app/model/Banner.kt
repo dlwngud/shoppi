@@ -1,4 +1,4 @@
-package com.dlwngud.app
+package com.dlwngud.app.model
 
 import com.google.gson.annotations.SerializedName
 
