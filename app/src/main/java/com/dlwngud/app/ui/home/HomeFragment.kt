@@ -31,7 +31,6 @@ class HomeFragment : Fragment() {
         setToolbar()
         setTopBanners()
 
-
 //        findNavController().navigate(R.id.action_home_to_product_detail)
     }
 

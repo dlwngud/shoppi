@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "288042985673",
+    "project_id": "shoppi-732fd",
+    "storage_bucket": "shoppi-732fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288042985673:android:5d85b5fca643953fdfc518",
+        "android_client_info": {
+          "package_name": "com.dlwngud.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "288042985673-u8s72e31dm7fiq5t968rkob62rtdng1s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOi9n8eiZ7RF8qx4rNu_mzxoJyCRUUYTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "288042985673-u8s72e31dm7fiq5t968rkob62rtdng1s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

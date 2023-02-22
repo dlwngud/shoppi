@@ -13,7 +13,7 @@ fun applyPriceFormat(view: TextView, price: Int) {
 }
 
 @BindingAdapter("priceAmount", "discountRate")
-fun applyPriceDiscountRate(view: TextView, price: Int, discountRate: Int){
+fun applyPriceDiscountRate(view: TextView, price: Int, discountRate: Int) {
     val discountPrice = (price * (100 - discountRate) / 100.0).roundToInt()
     applyPriceFormat(view, discountPrice)
 }

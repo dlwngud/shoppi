@@ -1,4 +1,4 @@
-package com.dlwngud.app.repository
+package com.dlwngud.app.repository.home
 
 import com.dlwngud.app.AssetLoader
 import com.dlwngud.app.model.HomeData
