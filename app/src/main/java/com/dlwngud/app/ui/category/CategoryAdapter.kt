@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dlwngud.app.databinding.ItemCategoryBinding
 import com.dlwngud.app.model.Category
 
-class CategoryAdapter: ListAdapter<Category, CategoryAdapter.CategoryViewHolder>(
+class CategoryAdapter(private val viewModel: CategoryViewModel): ListAdapter<Category, CategoryAdapter.CategoryViewHolder>(
         CategoryDiffCallback()
     ) {
 
@@ -22,9 +22,10 @@ class CategoryAdapter: ListAdapter<Category, CategoryAdapter.CategoryViewHolder>
         holder.bind(getItem((position)))
     }
 
-    class CategoryViewHolder(private val binding: ItemCategoryBinding) :
+    inner class CategoryViewHolder(private val binding: ItemCategoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(category: Category){
+            binding.viewModel = viewModel
             binding.category = category
             binding.executePendingBindings()
         }

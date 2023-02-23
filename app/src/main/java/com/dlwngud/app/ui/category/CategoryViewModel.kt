@@ -15,8 +15,15 @@ class CategoryViewModel(
     private val _items = MutableLiveData<List<Category>>()
     val items: LiveData<List<Category>> = _items
 
-    init{
+    private val _openCategoryEvent = MutableLiveData<Category>()
+    val openCategoryEvent: LiveData<Category> = _openCategoryEvent
+
+    init {
         loadCategory()
+    }
+
+    fun openCategoryDetail(category: Category) {
+        _openCategoryEvent.value = category
     }
 
     private fun loadCategory() {

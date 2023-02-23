@@ -5,11 +5,15 @@
 
     <data>
         <variable
+            name="viewModel"
+            type="com.dlwngud.app.ui.category.CategoryViewModel" />
+        <variable
             name="category"
             type="com.dlwngud.app.model.Category" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:onClick="@{() -> viewModel.openCategoryDetail(category)}"
         android:background="@drawable/background_bluegrey_r20"
         android:layout_marginHorizontal="4dp"
         android:layout_marginBottom="16dp"
