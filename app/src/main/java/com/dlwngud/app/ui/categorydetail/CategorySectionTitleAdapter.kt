@@ -33,6 +33,7 @@ class CategorySectionTitleAdapter :
     }
 }
 
+// DiffUntil: 두 리스트의 차이점을 찾아 업데이트 되어야 할 목록을 반환해줘 RecyclerView 어댑터에 대한 업데이트를 알리는데 사용
 class TitleDiffCallback : DiffUtil.ItemCallback<Title>() {
     override fun areItemsTheSame(oldItem: Title, newItem: Title): Boolean {
         return oldItem.text == newItem.text

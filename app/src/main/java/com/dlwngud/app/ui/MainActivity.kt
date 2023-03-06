@@ -4,25 +4,24 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.dlwngud.app.databinding.ActivityMainBinding
+import com.dlwngud.app.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_main)
 
         // 기본 color를 참조하지 않고 원래 색으로 표시
-        binding.navigationMain.itemIconTintList = null
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.navigation_main)
+        bottomNavigationView.itemIconTintList = null
 
-        val navController = supportFragmentManager.findFragmentById(binding.containerMain.id)?.findNavController()
+        val navController = supportFragmentManager.findFragmentById(R.id.container_main)?.findNavController()
         navController?.let {
-            binding.navigationMain.setupWithNavController(it)
+            bottomNavigationView.setupWithNavController(it)
         }
     }
 

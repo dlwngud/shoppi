@@ -9,10 +9,6 @@ android {
     namespace 'com.dlwngud.app'
     compileSdk 32
 
-    viewBinding {
-        enabled = true
-    }
-
     dataBinding {
         enabled = true
     }

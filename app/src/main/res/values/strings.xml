@@ -10,6 +10,9 @@
     <string name="unit_discount_rate">%d%%</string>
     <string name="unit_discount_currency">%s원</string>
     <string name="label_category_new">NEW</string>
+    <string name="description_product_representative_image">상품 이미지</string>
+
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
