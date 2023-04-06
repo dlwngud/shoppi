@@ -4,8 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.dlwngud.app.model.Banner
+import com.dlwngud.app.model.Promotion
 import com.dlwngud.app.model.Title
 import com.dlwngud.app.repository.home.HomeRepository
+import com.dlwngud.app.ui.common.Event
 
 class HomeViewModel(private val homeRepository: HomeRepository) : ViewModel() {
 
@@ -15,8 +17,18 @@ class HomeViewModel(private val homeRepository: HomeRepository) : ViewModel() {
     private val _topBanners = MutableLiveData<List<Banner>>()
     val topBanner: LiveData<List<Banner>> = _topBanners
 
+    private val _promotions = MutableLiveData<Promotion>()
+    val promotions: LiveData<Promotion> = _promotions
+
+    private val _openProductEvent = MutableLiveData<Event<String>>()
+    val openProductEvent: LiveData<Event<String>> = _openProductEvent
+
     init {
         loadHomeData()
+    }
+
+    fun openProductDetail(productId: String){
+        _openProductEvent.value = Event(productId)
     }
 
     private fun loadHomeData() {
@@ -24,6 +36,7 @@ class HomeViewModel(private val homeRepository: HomeRepository) : ViewModel() {
         homeData?.let { homeData ->
             _title.value = homeData.title
             _topBanners.value = homeData.topBanner
+            _promotions.value = homeData.promotions
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.dlwngud.app.ui.categorydetail
+package com.dlwngud.app.ui.common
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dlwngud.app.databinding.ItemTitleBinding
 import com.dlwngud.app.model.Title
 
-class CategorySectionTitleAdapter :
-    ListAdapter<Title, CategorySectionTitleAdapter.CategorySectionTitleViewHolder>(TitleDiffCallback()) {
+class SectionTitleAdapter :
+    ListAdapter<Title, SectionTitleAdapter.CategorySectionTitleViewHolder>(TitleDiffCallback()) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
