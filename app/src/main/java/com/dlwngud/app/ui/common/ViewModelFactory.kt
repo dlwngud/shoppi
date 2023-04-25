@@ -6,6 +6,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.dlwngud.app.AssetLoader
 import com.dlwngud.app.ServiceLocator
 import com.dlwngud.app.network.ApiClient
+import com.dlwngud.app.repository.cart.CartItemLocalDataSource
+import com.dlwngud.app.repository.cart.CartRepository
 import com.dlwngud.app.repository.category.CategoryRemoteDataSource
 import com.dlwngud.app.repository.category.CategoryRepository
 import com.dlwngud.app.repository.categorydetail.CategoryDetailRemoteDataSource
@@ -45,10 +47,10 @@ class ViewModelFactory(private val context: Context) : ViewModelProvider.Factory
                         ServiceLocator.provideApiClient()
                     )
                 )
-                ProductDetailViewModel(repository) as T
+                ProductDetailViewModel(repository, ServiceLocator.provideCartRepository(context)) as T
             }
             modelClass.isAssignableFrom(CartViewModel::class.java) -> {
-                CartViewModel() as T
+                CartViewModel(ServiceLocator.provideCartRepository(context)) as T
             }
             else -> {
                 throw IllegalArgumentException("Failed to create ViewModel: ${modelClass.name}")

@@ -31,23 +31,24 @@ class ProductDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.lifecycleOwner = viewLifecycleOwner
+        binding.viewModel = viewModel
         setNavigation()
         requireArguments().getString(KEY_PRODUCT_ID)?.let { productId ->
             setLayout(productId)
         }
-//        setAddCart()
+        setAddCart()
     }
 
-//    private fun setAddCart() {
-//        viewModel.addCartEvent.observe(viewLifecycleOwner, EventObserver {
-//            MaterialAlertDialogBuilder(requireContext())
-//                .setTitle(getString(R.string.dialog_title_add_cart))
-//                .setPositiveButton(getString(R.string.dialog_button_label_confirm)) { dialog, which ->
-//
-//                }
-//                .show()
-//        })
-//    }
+    private fun setAddCart() {
+        viewModel.addCartEvent.observe(viewLifecycleOwner, EventObserver {
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle(getString(R.string.dialog_title_add_cart))
+                .setPositiveButton(getString(R.string.dialog_button_label_confirm)) { dialog, which ->
+
+                }
+                .show()
+        })
+    }
 
     private fun setNavigation() {
         binding.toolbarProductDetail.setNavigationOnClickListener {
