@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_cart"
-        android:name="com.dlwngud.app.ui.CartFragment"
+        android:name="com.dlwngud.app.ui.cart.CartFragment"
         android:label="CartFragment"
         tools:layout="@layout/fragment_cart" />
     <fragment

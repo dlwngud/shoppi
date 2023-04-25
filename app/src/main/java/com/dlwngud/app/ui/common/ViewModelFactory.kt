@@ -14,6 +14,7 @@ import com.dlwngud.app.repository.home.HomeAssetDataSource
 import com.dlwngud.app.repository.home.HomeRepository
 import com.dlwngud.app.repository.productdetail.ProductDetailRemoteDataSource
 import com.dlwngud.app.repository.productdetail.ProductDetailRepository
+import com.dlwngud.app.ui.cart.CartViewModel
 import com.dlwngud.app.ui.category.CategoryViewModel
 import com.dlwngud.app.ui.categorydetail.CategoryDetailViewModel
 import com.dlwngud.app.ui.home.HomeViewModel
@@ -45,6 +46,9 @@ class ViewModelFactory(private val context: Context) : ViewModelProvider.Factory
                     )
                 )
                 ProductDetailViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(CartViewModel::class.java) -> {
+                CartViewModel() as T
             }
             else -> {
                 throw IllegalArgumentException("Failed to create ViewModel: ${modelClass.name}")
